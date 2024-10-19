@@ -27,7 +27,10 @@ function Answers({ answers, selectedAnswer, answerState, onSelect }) {
 
         return (
           <li key={answer} className='answer'>
-            <button className={cssClasses} onClick={() => onSelect(answer)}>
+            <button
+              className={cssClasses}
+              onClick={() => onSelect(answer)}
+              disabled={answerState !== ''}>
               {answer}
             </button>
           </li>
