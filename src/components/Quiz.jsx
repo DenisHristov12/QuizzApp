@@ -1,9 +1,9 @@
 import { useCallback, useState } from 'react';
 
 import QUESTIONS from '../questions';
-import quizCompleteImg from '../assets/quiz-complete.png';
 
 import Question from './Question';
+import Summary from './Summary';
 
 function Quiz() {
   const [userAnswers, setUserAnswers] = useState([]);
@@ -27,12 +27,7 @@ function Quiz() {
   );
 
   if (quizIsComplete) {
-    return (
-      <div id='summary'>
-        <img src={quizCompleteImg} alt='Trophy icon' />
-        <h2>Quiz completed</h2>
-      </div>
-    );
+    return <Summary answers={userAnswers} />;
   }
 
   return (
